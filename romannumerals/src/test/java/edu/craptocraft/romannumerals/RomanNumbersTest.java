@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class SymbolsTest {
+public class RomanNumbersTest {
 
     // Enum correct behaviour
     @Test
