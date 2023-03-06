@@ -2,9 +2,7 @@
 
 IMPORTANT! All the starting information was provided by my teacher before doing the exam. (UML, userstories, etc.)
 
-[Start statement](https://github.com/dfleta/romans-go-home)
-
-[Dfleta solution](https://github.com/dfleta/romans-go-home)
+[Start statement and solution](https://github.com/dfleta/romans-go-home)
 
 Repository for the kata of roman numerals. Usefull to train ENUM types and Regular Expresions in java
 
