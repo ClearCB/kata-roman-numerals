@@ -1,5 +1,5 @@
 package edu.craptocraft.romannumerals;
 
-public class RomanNumbers {
+public class RomanNumber {
     
 }

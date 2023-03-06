@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class RomanNumbersTest {
+public class RomanNumberTest {
 
     // Enum correct behaviour
     @Test
@@ -20,6 +20,13 @@ public class RomanNumbersTest {
 
         assertEquals("I", Symbols.I.name());
     }
+
+    @Test
+    public void toStringTest(){
+
+
+    }
+
 
     @Test
     public void symbolsCountTest() {
