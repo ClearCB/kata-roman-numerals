@@ -10,6 +10,7 @@ public class RomanNumberTest {
     public static RomanNumber roman;
     public static RomanNumber romanOne;
     public static RomanNumber romanTwelve;
+    
 
     @BeforeClass
     public static void createRoman() {
@@ -43,8 +44,9 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void computeValue() {
+    public void computeValueEnumTest() {
 
+        // These checks the values of EnumTypes
         assertEquals(1, roman.computeValue("I"));
         assertEquals(5, roman.computeValue("V"));
         assertEquals(10, roman.computeValue("X"));
@@ -52,12 +54,6 @@ public class RomanNumberTest {
         assertEquals(100, roman.computeValue("C"));
         assertEquals(500, roman.computeValue("D"));
         assertEquals(1000, roman.computeValue("M"));
-
-    }
-
-    @Test
-    public void regexExpresionFindTest() {
-
         assertEquals(4, roman.computeValue("IV"));
         assertEquals(9, roman.computeValue("IX"));
         assertEquals(40, roman.computeValue("XL"));
@@ -65,6 +61,24 @@ public class RomanNumberTest {
         assertEquals(400, roman.computeValue("CD"));
         assertEquals(900, roman.computeValue("CM"));
 
+        // Other expresions with mixed valid values
+
+    }
+
+    public RomanNumber romanTwo; 
+    public RomanNumber romanEleven; 
+    public RomanNumber romanTwoT; 
+
+    @Test
+    public void regexExpresionFindTest() {
+
+        romanTwo = new RomanNumber("II");
+        romanEleven = new RomanNumber("XI");
+        romanTwoT = new RomanNumber("MM");
+
+        assertEquals(2, this.romanTwo.toDecimal());
+        assertEquals(11, romanEleven.toDecimal());
+        assertEquals(2000, romanTwoT.toDecimal());
     }
 
     // @Test
