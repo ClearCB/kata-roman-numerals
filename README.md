@@ -8,7 +8,7 @@ I based the architecture at the one my teacher did, tried to solve it easily.
 
 ## Description
 
-The porpouse of this kata is to create an application that translate a roman number into a decimal number. Trying to follow the rules of it to keep a valid translation using regex and enum types.
+The porpouse of this kata is to create an application that translate a valid roman number into a decimal number.
 
 The roman rules of numeration that we follow are located [here](https://en.wikipedia.org/wiki/Roman_numerals) (we also checked the spanish wikipedia of it)
 
