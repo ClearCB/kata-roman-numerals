@@ -10,7 +10,6 @@ public class RomanNumberTest {
     public static RomanNumber roman;
     public static RomanNumber romanOne;
     public static RomanNumber romanTwelve;
-    
 
     @BeforeClass
     public static void createRoman() {
@@ -37,13 +36,6 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void getRegexTest() {
-
-        assertEquals("I(?=[VX])|X(?=[LC])|C(?=[DM])|[IVXLCDM]", roman.getRegexRules().get(0));
-
-    }
-
-    @Test
     public void computeValueEnumTest() {
 
         // These checks the values of EnumTypes
@@ -65,20 +57,20 @@ public class RomanNumberTest {
 
     }
 
-    public RomanNumber romanTwo; 
-    public RomanNumber romanEleven; 
-    public RomanNumber romanTwoT; 
+    public RomanNumber romanTwo;
 
     @Test
     public void regexExpresionFindTest() {
 
         romanTwo = new RomanNumber("II");
-        romanEleven = new RomanNumber("XI");
-        romanTwoT = new RomanNumber("MM");
+        RomanNumber romanEleven = new RomanNumber("XI");
+        RomanNumber romanTwoT = new RomanNumber("MM");
+        RomanNumber newR = new RomanNumber("CD");
 
         assertEquals(2, this.romanTwo.toDecimal());
         assertEquals(11, romanEleven.toDecimal());
         assertEquals(2000, romanTwoT.toDecimal());
+        assertEquals(400, newR.toDecimal());
     }
 
     // @Test

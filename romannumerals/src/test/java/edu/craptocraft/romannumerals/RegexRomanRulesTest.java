@@ -13,13 +13,7 @@ public class RegexRomanRulesTest {
 
         roman = new RegexRomanRulesNumber();
     }
-
-    @Test
-    public void regexExpresionTest() {
-
-        assertEquals("I(?=[VX])|X(?=[LC])|C(?=[DM])|[IVXLCDM]", roman.regexExpresion().get(0));
-    }
-
+    
     @Test
     public void addRegexTest() {
 

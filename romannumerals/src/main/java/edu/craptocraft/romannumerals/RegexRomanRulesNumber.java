@@ -9,7 +9,9 @@ public class RegexRomanRulesNumber {
 
     RegexRomanRulesNumber(){
         this.regexExpresion = new ArrayList<String>();
-        this.addRegex("I(?=[VX])|X(?=[LC])|C(?=[DM])|[IVXLCDM]");
+        this.addRegex("I[VX]|X[LC]|C[DM]|[IVXLCDM]");
+        // It is important that this regex expresion does not get all the posibles combinations. Here there is something more complex
+        // but was not though by myself.
     }
 
     protected List<String> regexExpresion(){
