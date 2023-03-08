@@ -20,13 +20,12 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void constructoTest(){
+    public void constructoTest() {
 
         assertNotNull(roman);
         assertNotNull(romanOne);
         assertNotNull(romanTwelve);
     }
-
 
     @Test
     public void toStringTest() {
@@ -36,33 +35,53 @@ public class RomanNumberTest {
         assertEquals("XII", romanTwelve.toString());
     }
 
+    @Test
+    public void getRegexTest() {
 
+        assertEquals("I(?=[VX])|X(?=[LC])|C(?=[DM])|[IVXLCDM]", roman.getRegexRules().get(0));
 
+    }
 
+    @Test
+    public void computeValue() {
 
+        assertEquals(1, roman.computeValue("I"));
+        assertEquals(5, roman.computeValue("V"));
+        assertEquals(10, roman.computeValue("X"));
+        assertEquals(50, roman.computeValue("L"));
+        assertEquals(100, roman.computeValue("C"));
+        assertEquals(500, roman.computeValue("D"));
+        assertEquals(1000, roman.computeValue("M"));
 
-    // @Test
-    // public void toDecimalTest(){
+    }
 
-    //     assertEquals(1 ,romanOne.toDecimal());
-    //     assertEquals(12 ,romanTwelve.toDecimal());
-    // }
+    @Test
+    public void regexExpresionFindTest() {
+
+        assertEquals(4, roman.computeValue("IV"));
+        assertEquals(9, roman.computeValue("IX"));
+        assertEquals(40, roman.computeValue("XL"));
+        assertEquals(90, roman.computeValue("XC"));
+        assertEquals(400, roman.computeValue("CD"));
+        assertEquals(900, roman.computeValue("CM"));
+
+    }
 
     // @Test
     // public void symbolsCountTest() {
-    //     // I no more three
+    // // I no more three
 
-    //     // V just one
+    // // V just one
 
-    //     // X
+    // // X
 
-    //     // L
+    // // L
 
-    //     // C
+    // // C
 
-    //     // D
+    // // D
 
-    //     // M
+    // // M
     // }
 
     // @Test
@@ -78,44 +97,44 @@ public class RomanNumberTest {
     // @Test
     // public void threeSymbolsTest() {
 
-    //     // M, C, X, I YES
+    // // M, C, X, I YES
 
-    //     // D, L, V NO
+    // // D, L, V NO
     // }
 
     // @Test
     // public void minusSymbolsTest() {
 
-    //     // IV / IX
+    // // IV / IX
 
-    //     // I left just 1 bigger at right
+    // // I left just 1 bigger at right
 
-    //     // XL / XC
+    // // XL / XC
 
-    //     // CD / CM
+    // // CD / CM
 
-    //     // NO MINUS D,L V
+    // // NO MINUS D,L V
 
-    //     // REPEAT SYMBOLS THAT ARE NOT COHERENCE
+    // // REPEAT SYMBOLS THAT ARE NOT COHERENCE
     // }
 
     // @Test
     // public void test() {
 
-    //     // 39 = XXXIX
-    //     //  246 = CCXLVI
-    //     //  789 = DCCLXXXIX
-    //     // 2,421 = MMCDXXI
+    // // 39 = XXXIX
+    // //  246 = CCXLVI
+    // //  789 = DCCLXXXIX
+    // // 2,421 = MMCDXXI
 
-    //     //  160 = CLX
-    //     //  207 = CCVII
-    //     // 1,009 = MIX
-    //     // 1,066 = MLXVI
+    // //  160 = CLX
+    // //  207 = CCVII
+    // // 1,009 = MIX
+    // // 1,066 = MLXVI
 
-    //     // 1776 = MDCCLXXVI
-    //     // 1918 =MCMXVIII
-    //     // 1944 = MCMXLIV
-    //     // 2023 = MMXXIII
+    // // 1776 = MDCCLXXVI
+    // // 1918 =MCMXVIII
+    // // 1944 = MCMXLIV
+    // // 2023 = MMXXIII
     // }
 
 }
