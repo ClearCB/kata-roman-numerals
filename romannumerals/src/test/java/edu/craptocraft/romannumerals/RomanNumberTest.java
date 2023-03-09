@@ -66,11 +66,27 @@ public class RomanNumberTest {
         RomanNumber romanEleven = new RomanNumber("XI");
         RomanNumber romanTwoT = new RomanNumber("MM");
         RomanNumber newR = new RomanNumber("CD");
+        RomanNumber newR2 = new RomanNumber("CCCCD");
 
+        
         assertEquals(2, this.romanTwo.toDecimal());
         assertEquals(11, romanEleven.toDecimal());
         assertEquals(2000, romanTwoT.toDecimal());
         assertEquals(400, newR.toDecimal());
+        assertEquals(0, newR2.toDecimal());
+
+        newR2 = new RomanNumber("CCCCD");
+        assertEquals(0, newR2.toDecimal());
+
+        newR2 = new RomanNumber("IIIID");
+        assertEquals(0, newR2.toDecimal());
+
+        newR2 = new RomanNumber("MMMMD");
+        assertEquals(0, newR2.toDecimal());
+
+        newR2 = new RomanNumber("XXXXD");
+        assertEquals(0, newR2.toDecimal());
+
     }
 
 }

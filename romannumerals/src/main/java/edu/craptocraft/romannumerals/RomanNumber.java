@@ -46,6 +46,12 @@ public class RomanNumber {
             Pattern p = Pattern.compile(pattern);
             Matcher m = p.matcher(this.getNumber());
 
+            if ( (this.getRegexRules().indexOf(pattern) == 0) && (m.find()) ){
+
+                this.setDecimalNumber(0);
+                break;
+            }
+
             while (m.find()) {
 
                 total += this.computeValue(m.group());
