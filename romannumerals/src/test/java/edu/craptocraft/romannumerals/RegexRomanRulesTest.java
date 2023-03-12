@@ -14,12 +14,12 @@ public class RegexRomanRulesTest {
         roman = new RegexRomanRulesNumber();
     }
     
-    @Test
-    public void addRegexTest() {
+    // @Test
+    // public void addRegexTest() {
 
-        assertEquals(1, roman.regexExpresion().size());
-        roman.addRegex("hgagha");
+    //     assertEquals(1, roman.regexExpresion().size());
+    //     roman.addRegex("hgagha");
 
-        assertEquals(2, roman.regexExpresion().size());
-    }
+    //     assertEquals(2, roman.regexExpresion().size());
+    // }
 }

@@ -1,13 +1,14 @@
 package edu.craptocraft.romannumerals;
 
 import java.util.List;
+import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RomanNumber {
     private String number;
     private RegexRomanRulesNumber regexRules;
-    private int decimalNumber;
+    private int decimalNumber = 0;
 
     public RomanNumber(String numberSymbols) {
         this.number = numberSymbols;
@@ -27,8 +28,8 @@ public class RomanNumber {
         this.decimalNumber = number;
     }
 
-    protected List<String> getRegexRules() {
-        return this.regexRules.regexExpresion();
+    protected RegexRomanRulesNumber getRegexRules() {
+        return this.regexRules;
     }
 
     public int computeValue(String str) {
@@ -37,29 +38,41 @@ public class RomanNumber {
 
     }
 
+    public boolean isValid() {
+
+        for (String pattern : this.getRegexRules().invalidRegexExpresion()) {
+
+            Pattern p = Pattern.compile(pattern);
+            Matcher m = p.matcher(this.getNumber());
+
+            if (m.find()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void findMatchs() {
 
         int total = 0;
 
-        for (String pattern : this.getRegexRules()) {
-            // Compile the pattern
-            Pattern p = Pattern.compile(pattern);
-            Matcher m = p.matcher(this.getNumber());
+        if (this.isValid()) {
+            
+            for (String pattern : this.getRegexRules().validRegexExpresion()) {
+                // Compile the pattern
+                Pattern p = Pattern.compile(pattern);
+                Matcher m = p.matcher(this.getNumber());
 
-            if ( (this.getRegexRules().indexOf(pattern) == 0) && (m.find()) ){
+                while (m.find()) {
 
-                this.setDecimalNumber(0);
-                break;
+                    total += this.computeValue(m.group());
+
+                }
+
+                this.setDecimalNumber(total);
+
             }
-
-            while (m.find()) {
-
-                total += this.computeValue(m.group());
-
-            }
-
-            this.setDecimalNumber(total);
-
         }
 
     }
