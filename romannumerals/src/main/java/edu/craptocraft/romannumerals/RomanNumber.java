@@ -1,7 +1,5 @@
 package edu.craptocraft.romannumerals;
 
-import java.util.List;
-import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,7 +56,7 @@ public class RomanNumber {
         int total = 0;
 
         if (this.isValid()) {
-            
+
             for (String pattern : this.getRegexRules().validRegexExpresion()) {
                 // Compile the pattern
                 Pattern p = Pattern.compile(pattern);
